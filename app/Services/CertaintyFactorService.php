@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Services;
+
 use App\Models\Rule;
+
 class CertaintyFactorService
 {
     /**
      * Menghitung Certainty Factor untuk gejala yang dipilih oleh user.
      *
-     * @param array $userGejalas Array of [gejala_id => cf_user]
+     * @param  array  $userGejalas  Array of [gejala_id => cf_user]
      * @return array Penyakit yang diberi peringkat berdasarkan nilai CF
      */
     public function calculate(array $userGejalas)
@@ -29,7 +31,7 @@ class CertaintyFactorService
                 // CF(H,E) = CFpakar * CFuser
                 $cfHe = $cfPakar * $cfUser;
 
-                // Menghitung CFcombine 
+                // Menghitung CFcombine
                 if ($index === 0) {
                     $cfOld = $cfHe;
                 } else {
@@ -41,7 +43,7 @@ class CertaintyFactorService
             $results[] = [
                 'penyakit' => $penyakitRules->first()->penyakit,
                 'cf_value' => $cfOld,
-                'percentage' => round($cfOld * 100, 2)
+                'percentage' => round($cfOld * 100, 2),
             ];
         }
 

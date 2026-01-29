@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Rule;
-use App\Models\Penyakit;
 use App\Models\Gejala;
+use App\Models\Penyakit;
+use App\Models\Rule;
 use Illuminate\Http\Request;
 
 class RuleController extends Controller
@@ -13,6 +13,7 @@ class RuleController extends Controller
     public function index()
     {
         $rules = Rule::with(['penyakit', 'gejala'])->paginate(7);
+
         return view('admin.rule.index', compact('rules'));
     }
 
@@ -20,6 +21,7 @@ class RuleController extends Controller
     {
         $penyakits = Penyakit::all();
         $gejalas = Gejala::all();
+
         return view('admin.rule.create', compact('penyakits', 'gejalas'));
     }
 
@@ -49,6 +51,7 @@ class RuleController extends Controller
     {
         $penyakits = Penyakit::all();
         $gejalas = Gejala::all();
+
         return view('admin.rule.edit', compact('rule', 'penyakits', 'gejalas'));
     }
 
@@ -78,6 +81,7 @@ class RuleController extends Controller
     public function destroy(Rule $rule)
     {
         $rule->delete();
+
         return redirect()->route('admin.rule.index')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 class ConsultationController extends Controller
 {
     protected $cfService;
+
     protected $wpService;
 
     public function __construct(CertaintyFactorService $cfService, WeightedProductService $wpService)
@@ -23,6 +24,7 @@ class ConsultationController extends Controller
     public function index()
     {
         $gejalas = Gejala::all();
+
         return view('front.konsultasi', compact('gejalas'));
     }
 

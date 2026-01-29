@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PenyakitController;
 use App\Http\Controllers\Admin\GejalaController;
-use App\Http\Controllers\Admin\RuleController;
+use App\Http\Controllers\Admin\PenyakitController;
 use App\Http\Controllers\Admin\RiwayatController;
+use App\Http\Controllers\Admin\RuleController;
 use App\Http\Controllers\Front\ConsultationController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

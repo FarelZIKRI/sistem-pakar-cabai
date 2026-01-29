@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Penyakit;
 use App\Models\Gejala;
-use App\Models\Rule;
 use App\Models\Konsultasi;
+use App\Models\Penyakit;
+use App\Models\Rule;
 
 class DashboardController extends Controller
 {
@@ -25,7 +24,7 @@ class DashboardController extends Controller
             ->groupBy('penyakit_terpilih_id')
             ->get();
 
-        $pie_labels = $penyakit_pie->map(fn($item) => $item->penyakit->nama ?? 'Lainnya')->toArray();
+        $pie_labels = $penyakit_pie->map(fn ($item) => $item->penyakit->nama ?? 'Lainnya')->toArray();
         $pie_data = $penyakit_pie->pluck('total')->toArray();
 
         // Data Bar Chart: Konsultasi per Bulan (Tahun Ini)

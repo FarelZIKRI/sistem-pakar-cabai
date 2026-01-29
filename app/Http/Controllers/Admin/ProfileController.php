@@ -13,18 +13,18 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Assuming handling the first user as Admin since no Auth implementation yet
         $user = User::first();
 
-        if (!$user) {
+        if (! $user) {
             // Create prompt if no user exists
             $user = User::create([
                 'name' => $request->name,
                 'email' => 'admin@example.com',
-                'password' => bcrypt('password') // Default
+                'password' => bcrypt('password'), // Default
             ]);
         } else {
             $user->name = $request->name;

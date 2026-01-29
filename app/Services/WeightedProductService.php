@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+
 use App\Models\Penyakit;
 use App\Models\Rule;
 
@@ -11,7 +12,7 @@ class WeightedProductService
      * Si = Product(xij ^ wj)
      * Vi = Si / Sum(Si)
      *
-     * @param array $userGejalas Array of [gejala_id => cf_user] (digunakan untuk memicu relevansi)
+     * @param  array  $userGejalas  Array of [gejala_id => cf_user] (digunakan untuk memicu relevansi)
      * @return array Penyakit yang diberi peringkat berdasarkan nilai WP
      */
     public function calculate(array $userGejalas)
@@ -43,7 +44,7 @@ class WeightedProductService
 
             $s_values[$penyakitId] = [
                 'penyakit' => $penyakitRules->first()->penyakit,
-                's_score' => $product
+                's_score' => $product,
             ];
             $total_s += $product;
         }
@@ -56,7 +57,7 @@ class WeightedProductService
                 $results[] = [
                     'penyakit' => $data['penyakit'],
                     'wp_value' => $v_score,
-                    'percentage' => round($v_score * 100, 2)
+                    'percentage' => round($v_score * 100, 2),
                 ];
             }
         }

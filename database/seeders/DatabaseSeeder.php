@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Penyakit;
 use App\Models\Gejala;
+use App\Models\Penyakit;
 use App\Models\Rule;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,28 +21,28 @@ class DatabaseSeeder extends Seeder
                 'nama' => 'Layu Fusarium',
                 'deskripsi' => 'Penyakit layu yang disebabkan oleh jamur Fusarium oxysporum. Gejala khas adalah daun menguning dan layu mulai dari bawah.',
                 'solusi' => 'Cabut dan musnahkan tanaman sakit. Gunakan fungisida berbahan aktif benomil.',
-                'gambar' => null
+                'gambar' => null,
             ],
             [
                 'kode' => 'P02',
                 'nama' => 'Layu Bakteri',
                 'deskripsi' => 'Disebabkan oleh bakteri Ralstonia solanacearum. Tanaman layu mendadak dan batang mengeluarkan lendir putih jika dipotong.',
                 'solusi' => 'Perbaiki drainase, rotasi tanaman, dan gunakan bakterisida.',
-                'gambar' => null
+                'gambar' => null,
             ],
             [
                 'kode' => 'P03',
                 'nama' => 'Busuk Buah (Antraknosa)',
                 'deskripsi' => 'Disebabkan jamur Colletotrichum. Menyerang buah cabai, menimbulkan bercak coklat kehitaman.',
                 'solusi' => 'Semprot fungisida, atur jarak tanam agar tidak terlalu lembab.',
-                'gambar' => null
+                'gambar' => null,
             ],
             [
                 'kode' => 'P04',
                 'nama' => 'Bercak Daun',
                 'deskripsi' => 'Disebabkan jamur Cercospora capsici. Terdapat bercak bulat kecil berwarna abu-abu dengan tepi coklat pada daun.',
                 'solusi' => 'Sanitasi kebun, musnahkan daun terinfeksi, semprot fungisida.',
-                'gambar' => null
+                'gambar' => null,
             ],
         ];
 

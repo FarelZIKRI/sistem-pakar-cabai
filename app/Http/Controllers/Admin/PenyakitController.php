@@ -12,6 +12,7 @@ class PenyakitController extends Controller
     public function index()
     {
         $penyakits = Penyakit::paginate(7);
+
         return view('admin.penyakit.index', compact('penyakits'));
     }
 
@@ -47,7 +48,7 @@ class PenyakitController extends Controller
     public function update(Request $request, Penyakit $penyakit)
     {
         $request->validate([
-            'kode' => 'required|unique:penyakits,kode,' . $penyakit->id,
+            'kode' => 'required|unique:penyakits,kode,'.$penyakit->id,
             'nama' => 'required',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
@@ -72,6 +73,7 @@ class PenyakitController extends Controller
             Storage::disk('public')->delete($penyakit->gambar);
         }
         $penyakit->delete();
+
         return redirect()->route('admin.penyakit.index')->with('success', 'Data berhasil dihapus');
     }
 }

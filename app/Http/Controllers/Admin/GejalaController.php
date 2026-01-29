@@ -11,6 +11,7 @@ class GejalaController extends Controller
     public function index()
     {
         $gejalas = Gejala::paginate(7);
+
         return view('admin.gejala.index', compact('gejalas'));
     }
 
@@ -40,7 +41,7 @@ class GejalaController extends Controller
     public function update(Request $request, Gejala $gejala)
     {
         $request->validate([
-            'kode' => 'required|unique:gejalas,kode,' . $gejala->id,
+            'kode' => 'required|unique:gejalas,kode,'.$gejala->id,
             'nama' => 'required',
             'bobot' => 'nullable|numeric',
         ]);
@@ -53,6 +54,7 @@ class GejalaController extends Controller
     public function destroy(Gejala $gejala)
     {
         $gejala->delete();
+
         return redirect()->route('admin.gejala.index')->with('success', 'Data berhasil dihapus');
     }
 }
