@@ -6,7 +6,7 @@
 
 Sistem Pakar ini adalah aplikasi berbasis web yang dirancang untuk membantu petani dalam mendeteksi penyakit pada tanaman cabai secara dini. Dengan menggunakan pengetahuan pakar yang dikonversi ke dalam basis aturan digital, sistem ini mampu memberikan diagnosis penyakit beserta tingkat keyakinannya.
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 1. **Dashboard Statistik** - Memantau jumlah data penyakit, gejala, dan riwayat konsultasi
 2. **Manajemen Data (CRUD)** - Pengelolaan data penyakit, gejala, dan basis aturan (rule base) oleh admin
@@ -14,35 +14,8 @@ Sistem Pakar ini adalah aplikasi berbasis web yang dirancang untuk membantu peta
 4. **Hasil Diagnosis Detail** - Menampilkan hasil perhitungan algoritma secara transparan, interpretasi penyakit, dan solusi penanganannya
 5. **Metode Ganda** - Menggabungkan Certainty Factor (CF) sebagai mesin inferensi utama dan Weighted Product (WP) sebagai pendukung keputusan (validasi)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Laravel 12 (PHP 8.2)
 - **Database:** MySQL
 - **Frontend:** Blade Templates + Vite
-
-## 🚀 Instalasi
-
-```bash
-# Clone repository
-git clone https://github.com/FarelZIKRI/Sistem-Pakar-Cabai.git
-cd Sistem-Pakar-Cabai
-
-# Install dependencies
-composer install
-npm install
-
-# Setup environment
-cp .env.example .env
-php artisan key:generate
-
-# Import database
-# Import file sispak_cabe.sql ke MySQL/PhpMyAdmin
-
-# Run aplikasi
-php artisan serve
-npm run dev
-```
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
